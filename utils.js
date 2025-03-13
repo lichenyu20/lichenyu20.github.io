@@ -1,4 +1,4 @@
-function createProjectElement(id, project){
+function createProjectElement(id, project, links){
     /* Create an element in Project
     tag: some tags
     title: title of the project or publications
@@ -22,6 +22,9 @@ function createProjectElement(id, project){
       <em>${project.conference}</em>
       <br>
       ${project.others}`
+    for (let key in links){
+        html_txt += `<a href="${links[key]}">[${key}]</a> `
+    }
 
     document.getElementById(id + "-img").innerHTML = html_img;
     document.getElementById(id + "-txt").innerHTML = html_txt;
